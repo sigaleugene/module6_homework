@@ -9,16 +9,15 @@
 */
 
 function palindrom(word) {
-  str = word.toUpperCase().replace(/ /g, "");
-  flag = true;
+  const str = word.toUpperCase().replace(/ /g, "");
+  let flag = true;
   for (let index = 0; index < str.length / 2; index++) {
     if (str[index] != str[str.length - 1 - index]) {
       flag = false;
       break;
     }
   }
-  return flag
-    ? `Слово ${word} является палиндромом` : `«Слово ${word} не является палиндромом»`;
+  return flag ? `Слово ${word} является палиндромом` : `«Слово ${word} не является палиндромом»`;
 }
 
 console.log(palindrom("Довод"));
@@ -32,7 +31,7 @@ console.log(palindrom("А роза упала на лапу Азора"));
 */
 
 function getUniq(arr) {
-  let newSet = new Set(arr);
+  const newSet = new Set(arr);
   return new Array(...newSet);
 }
 
@@ -69,7 +68,7 @@ console.log(getUniq(arr));
 */
 
 function getArray(count) {
-    let result = [];
+    const result = [];
     for (let index = 0; index <= count; index++) {
         result.push(index);
     }
@@ -77,13 +76,13 @@ function getArray(count) {
 }
 
 function creatArray(){
+    let count;
     do{
-        var count = parseInt(prompt('введите колличество элементов'));
+        count = parseInt(prompt('введите колличество элементов'));
         if(isNaN(count))
             alert("Неверно. Введите целое число.");
     }while(isNaN(count))
-    var result = getArray(count);
-    console.log(result);
+    console.log(getArray(count));
 }
 
 creatArray();
@@ -137,7 +136,7 @@ const obj = {
 };
 
 function getArrValues(obj){
-    let result =[];
+    const result =[];
     for (const key in obj) {
         if(Array.isArray(obj[key]))
             result.push(...obj[key]);
